@@ -84,12 +84,13 @@ CREATE TABLE Operations(
 );
 
 
-CREATE TABLE AgentIntelligenceActivity(
+CREATE TABLE AgentIntelligenceActivities(
     Id              INT AUTO_INCREMENT
                             PRIMARY KEY,
     CoverEntityId   INT                     NOT NULL,
     OperationId     INT                     NOT NULL,
     AgentId         INT                     NOT NULL,
+    Description     NVARCHAR(300)           NULL,
     CONSTRAINT AgentIntelligenceActivityCoverEntityFk
         FOREIGN KEY (CoverEntityId) REFERENCES CoverEntities(Id),
     CONSTRAINT AgentIntelligenceActivityOperationFk
